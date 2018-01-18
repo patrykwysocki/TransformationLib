@@ -163,13 +163,16 @@ MyMatrix3 MyMatrix3::translate(int dx, int dy)
 	MyMatrix3 answer = MyMatrix3();
 	answer.m_a11 = 1;
 	answer.m_a12 = 0;
-	answer.m_a13 = 0;
+	answer.m_a13 = dx;
+
 	answer.m_a21 = 0;
 	answer.m_a22 = 1;
-	answer.m_a23 = 0;
-	answer.m_a31 = dx;
-	answer.m_a32 = dy;
+	answer.m_a23 = dy;
+
+	answer.m_a31 = 0;
+	answer.m_a32 = 0;
 	answer.m_a33 = 1;
+
 
 	return answer;
 
@@ -182,9 +185,11 @@ MyMatrix3 MyMatrix3::scale(int dx, int dy)
 	answer.m_a11 = (double)dx / 100;
 	answer.m_a12 = 0;
 	answer.m_a13 = 0;
+
 	answer.m_a21 = 0;
 	answer.m_a22 = (double)dy / 100;
 	answer.m_a23 = 0;
+
 	answer.m_a31 = 0;
 	answer.m_a32 = 0;
 	answer.m_a33 = 1;
@@ -207,9 +212,11 @@ MyMatrix3 MyMatrix3::rotationX(double angle)
 	answer.m_a11 = 1;
 	answer.m_a12 = 0;
 	answer.m_a13 = 0;
+
 	answer.m_a21 = 0;
 	answer.m_a22 = std::cos(radians);
 	answer.m_a23 = -std::sin(radians);
+
 	answer.m_a31 = 0;
 	answer.m_a32 = std::sin(radians);
 	answer.m_a33 = std::cos(radians);
@@ -224,9 +231,11 @@ MyMatrix3 MyMatrix3::rotationY(double angle)
 	answer.m_a11 = std::cos(radians);
 	answer.m_a12 = 0;
 	answer.m_a13 = std::sin(radians);
+
 	answer.m_a21 = 0;
 	answer.m_a22 = 1;
 	answer.m_a23 = 0;
+
 	answer.m_a31 = -std::sin(radians);
 	answer.m_a32 = 0;
 	answer.m_a33 = std::cos(radians);
@@ -238,12 +247,15 @@ MyMatrix3 MyMatrix3::rotationZ(double angle)
 {
 	double radians = 3.14 / 180 * angle;
 	MyMatrix3 answer = MyMatrix3();
+
 	answer.m_a11 = std::cos(radians);
 	answer.m_a12 = -std::sin(radians);
 	answer.m_a13 = 0;
+
 	answer.m_a21 = std::sin(radians);
 	answer.m_a22 = std::cos(radians);
 	answer.m_a23 = 0;
+
 	answer.m_a31 = 0;
 	answer.m_a32 = 0;
 	answer.m_a33 = 1;
@@ -257,9 +269,11 @@ MyMatrix3 MyMatrix3::scale3D(int dx)
 	answer.m_a11 = (double)dx / 100;
 	answer.m_a12 = 0;
 	answer.m_a13 = 0;
+
 	answer.m_a21 = 0;
 	answer.m_a22 = (double)dx / 100;
 	answer.m_a23 = 0;
+
 	answer.m_a31 = 0;
 	answer.m_a32= 0;
 	answer.m_a33 = (double)dx / 100;

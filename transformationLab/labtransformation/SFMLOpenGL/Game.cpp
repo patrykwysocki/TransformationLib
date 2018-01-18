@@ -204,22 +204,22 @@ void Game::draw()
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
 	{
-		m_point1 = m_matrix.scale(1.001,0.0001)*m_point1;
-		m_point2 = m_matrix.scale(1.0, 0.0001)*m_point2;
-		m_point3 = m_matrix.scale(1.0, 0.0001)*m_point3;
+		m_point1 = m_matrix.scale3D(100)*m_point1;
+		m_point2 = m_matrix.scale3D(100)*m_point2;
+		m_point3 = m_matrix.scale3D(-100)*m_point3;
 	}
-	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-	//{
-	//	m_point1 = m_matrix.translate(0.5,0.5)*m_point1;
-	//	m_point2 = m_matrix.translate(0.5,0.5)*m_point2;
-	//	m_point3 = m_matrix.translate(0.5,0.5)*m_point3;
-	//}
-	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	//{
-	//	m_point1 = m_matrix.translate(-0.5, -0.5)*m_point1;
-	//	m_point2 = m_matrix.translate(-0.5, -0.5)*m_point2;
-	//	m_point3 = m_matrix.translate(-0.5, -0.5)*m_point3;
-	//}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::N))
+	{
+		m_point1 = m_matrix.scale3D(100)*m_point1;
+		m_point2 = m_matrix.scale3D(-100)*m_point2;
+		m_point3 = m_matrix.scale3D(100)*m_point3;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::V))
+	{
+		m_point1 = m_matrix.scale3D(-100)*m_point1;
+		m_point2 = m_matrix.scale3D(100)*m_point2;
+		m_point3 = m_matrix.scale3D(100)*m_point3;
+	}
 
 	//moves triangles to the right
 
